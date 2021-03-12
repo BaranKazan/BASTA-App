@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AnimatedTabBar, { TabsConfig, BubbleTabBarItemConfig } from '@gorhom/animated-tabbar';
 import { StyleSheet } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './src/screen/Home'
 
@@ -61,26 +62,28 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        tabBar={props => (
-          <AnimatedTabBar style={styles.navigator} tabs={tabs} {...props} />
-        )}
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-        />
-        <Tab.Screen
-          name="Menu"
-          component={Home}
-        />
-        <Tab.Screen
-          name="Location"
-          component={Home}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          tabBar={props => (
+            <AnimatedTabBar style={styles.navigator} tabs={tabs} {...props} />
+          )}
+        >
+          <Tab.Screen
+            name="Home"
+            component={Home}
+          />
+          <Tab.Screen
+            name="Menu"
+            component={Home}
+          />
+          <Tab.Screen
+            name="Location"
+            component={Home}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   )
 }
 
