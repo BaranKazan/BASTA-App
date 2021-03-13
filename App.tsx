@@ -7,6 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './src/screen/Home'
 
+
 const tabs: TabsConfig<BubbleTabBarItemConfig> = {
   Home: {
     labelStyle: {
