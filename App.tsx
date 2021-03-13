@@ -6,6 +6,7 @@ import { StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './src/screen/Home'
+import Menu from './src/screen/Menu'
 
 
 const tabs: TabsConfig<BubbleTabBarItemConfig> = {
@@ -76,7 +77,7 @@ export default function App() {
           />
           <Tab.Screen
             name="Menu"
-            component={Home}
+            component={Menu}
           />
           <Tab.Screen
             name="Location"
